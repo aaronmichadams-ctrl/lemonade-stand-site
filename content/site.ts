@@ -89,7 +89,7 @@ export const founder = {
     {
       label: "Now",
       title: "Founder of NXT Soccer",
-      body: "Aaron founded NXT Soccer, a youth sports services company.",
+      body: "Aaron founded NXT Soccer, which runs youth soccer camps across Georgia.",
       icon: "ball" as const,
     },
   ],
