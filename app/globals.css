@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-chewy), "Comic Sans MS", system-ui, sans-serif;
+  --font-sans: var(--font-nunito), system-ui, sans-serif;
+}
+
+@theme {
+  --color-lemon: #ffd93b;
+  --color-lemon-soft: #fff1a8;
+  --color-lemon-deep: #f2b705;
+  --color-leaf: #3e8e41;
+  --color-leaf-dark: #2b6a2f;
+  --color-wood: #a0672f;
+  --color-wood-dark: #5c3a1e;
+  --color-wood-light: #c98d4f;
+  --color-cream: #fff8e7;
+  --color-ink: #2b2118;
+  --color-ink-soft: #54463a;
+  --color-chalk: #2f3d35;
+  --color-chalk-line: #e9efe6;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.on-dark :focus-visible,
+.on-dark:focus-visible {
+  outline-color: var(--color-lemon);
+}
+
+/* Chalkboard cards */
+.chalkboard {
+  background-color: var(--color-chalk);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05), transparent 45%);
+  border: 10px solid var(--color-wood);
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, 0.25),
+    0 10px 0 -4px var(--color-wood-dark),
+    0 14px 24px rgba(43, 33, 24, 0.18);
+  color: var(--color-chalk-line);
+}
+
+/* Wood grain */
+.wood-grain {
+  background-color: var(--color-wood-dark);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0px,
+      rgba(0, 0, 0, 0) 38px,
+      rgba(0, 0, 0, 0.35) 38px,
+      rgba(0, 0, 0, 0.35) 40px
+    ),
+    repeating-linear-gradient(
+      2deg,
+      rgba(255, 255, 255, 0.025) 0px,
+      rgba(255, 255, 255, 0.025) 3px,
+      rgba(0, 0, 0, 0.04) 3px,
+      rgba(0, 0, 0, 0.04) 7px
+    ),
+    linear-gradient(90deg, #5c3a1e, #6b4424 30%, #5a381c 60%, #654021);
+}
+
+/* Motion */
+@keyframes sway {
+  0%, 100% { transform: rotate(-0.8deg) skewX(-0.6deg); }
+  50% { transform: rotate(0.8deg) skewX(0.6deg); }
+}
+@keyframes slosh {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-30px) translateY(-3px); }
+  100% { transform: translateX(-60px) translateY(0); }
+}
+@keyframes tilt {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes spot {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.anim-sway { transform-box: fill-box; transform-origin: 50% 0%; animation: sway 5s ease-in-out infinite; }
+.anim-slosh { animation: slosh 2.6s linear infinite; }
+.anim-tilt { transform-box: fill-box; transform-origin: 50% 100%; animation: tilt 5s ease-in-out infinite; }
+.anim-spot { animation: spot 3.5s ease-in-out infinite; }
+.anim-bob { animation: bob 3s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .anim-sway, .anim-slosh, .anim-tilt, .anim-spot, .anim-bob {
+    animation: none !important;
+  }
+}
