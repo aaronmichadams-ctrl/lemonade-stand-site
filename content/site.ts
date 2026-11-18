@@ -74,22 +74,24 @@ export const founder = {
   eyebrow: "Meet the founder",
   name: "Aaron Adams",
   role: "Founder, Lemonade Stand",
-  // TODO: add a photo to /public (for example /public/aaron.jpg) and set the path here.
-  photo: null as string | null,
-  photoAlt: "Aaron Adams, founder of Lemonade Stand",
+  // Photo lives in /public. Swap the file to change it.
+  photo: "/aaron.jpg" as string | null,
+  photoAlt: "Portrait of Aaron Adams, founder of Lemonade Stand",
   photoPlaceholder: "Photo of Aaron goes here",
-  lead: "Aaron started his first business before he could drive.",
-  story: [
-    "In middle school, Aaron pitched his own business, Woof Water, on a kids' version of Shark Tank. The product was a powdered dog treat that mixed into water. Think Crystal Light for dogs.",
-    "In high school he ran a clothing business and a soap and fragrance business, and became the youngest manager at his Chick-fil-A.",
-    "He went on to earn a business administration degree in digital innovation and entrepreneurship from GBSB Global Business School.",
-    "Today Aaron runs NXT, a youth sports services company he founded. He coaches high school and youth soccer, and has worked in youth programs at Atlanta United FC and WinShape Camps.",
-  ],
-  highlights: [
-    "Pitched Woof Water on a kids' Shark Tank",
-    "Youngest manager at his Chick-fil-A",
-    "Founder of NXT",
-    "Youth programs at Atlanta United FC and WinShape Camps",
+  lead: "Aaron pitched his first business in middle school. Now he wants every student to get that same shot.",
+  milestones: [
+    {
+      label: "Then",
+      title: "Pitched Woof Water on a kids' Shark Tank",
+      body: "His middle school business: a powdered dog treat that mixed into water. Think Crystal Light for dogs.",
+      icon: "bowl" as const,
+    },
+    {
+      label: "Now",
+      title: "Founder of NXT Soccer",
+      body: "Aaron founded NXT Soccer, a youth sports services company.",
+      icon: "ball" as const,
+    },
   ],
 };
 

@@ -31,7 +31,7 @@ Things to fill in:
 | What | Where |
 | --- | --- |
 | Contact email | `CONTACT_EMAIL` at the top of `content/site.ts` |
-| Founder photo | Put the image in `public/` (for example `public/aaron.jpg`), then set `founder.photo` to `"/aaron.jpg"` in `content/site.ts` |
+| Founder photo | Replace `public/aaron.jpg` (4:5 portrait works best) |
 | Email subject lines | `getInvolved.schools.subject`, `getInvolved.sponsors.subject`, `mentorsSection.cta.subject` |
 
 House style: no em dashes in the copy. Use commas, periods, or colons.
