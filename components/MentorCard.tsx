@@ -12,6 +12,20 @@ function Silhouette() {
   );
 }
 
+function Initials({ name }: { name: string }) {
+  const initials = name
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+  return (
+    <span aria-hidden="true" className="flex h-full w-full items-center justify-center bg-leaf-dark font-display text-4xl text-lemon">
+      {initials}
+    </span>
+  );
+}
+
 export function MentorCard({ mentor }: { mentor: Mentor }) {
   return (
     <article
@@ -27,8 +41,10 @@ export function MentorCard({ mentor }: { mentor: Mentor }) {
       <div className="h-24 w-24 overflow-hidden rounded-full ring-4 ring-lemon">
         {mentor.photo ? (
           <Image src={mentor.photo} alt={`Photo of ${mentor.name}`} width={96} height={96} className="h-full w-full object-cover" />
-        ) : (
+        ) : mentor.placeholder ? (
           <Silhouette />
+        ) : (
+          <Initials name={mentor.name} />
         )}
       </div>
       <h3 className="mt-4 font-display text-2xl text-ink">
@@ -36,7 +52,16 @@ export function MentorCard({ mentor }: { mentor: Mentor }) {
         {mentor.placeholder ? <span className="text-ink-soft">: {mentor.title}</span> : null}
       </h3>
       {!mentor.placeholder ? <p className="font-bold text-ink-soft">{mentor.title}</p> : null}
-      <p className="text-sm font-bold uppercase tracking-wide text-leaf-dark">{mentor.company}</p>
+      <p className="text-sm font-bold uppercase tracking-wide text-leaf-dark">
+        {mentor.url ? (
+          <a href={mentor.url} target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4 hover:text-leaf">
+            {mentor.company}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        ) : (
+          mentor.company
+        )}
+      </p>
       <p className="mt-3 text-ink-soft">{mentor.helpsWith}</p>
     </article>
   );

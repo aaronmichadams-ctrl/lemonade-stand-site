@@ -1,7 +1,8 @@
 /**
  * Program mentors. Add a new object to this list to add a mentor.
  * Put headshots in /public/mentors/ and reference them as "/mentors/jane.jpg".
- * Leave "placeholder" off for real mentors; it marks the open-spot cards.
+ * Without a photo, the card shows the mentor's initials.
+ * Set placeholder: true to show an "Open spot" card.
  */
 export type Mentor = {
   name: string;
@@ -9,29 +10,30 @@ export type Mentor = {
   company: string;
   helpsWith: string;
   photo?: string;
+  url?: string;
   placeholder?: boolean;
 };
 
 export const mentors: Mentor[] = [
   {
-    name: "Your name here",
-    title: "Mentor spots open",
-    company: "Your company",
-    helpsWith: "Marketing, branding, and getting the word out.",
-    placeholder: true,
+    name: "Gavin Adams",
+    title: "Church Leadership Consultant and Author",
+    company: "gavinadams.com",
+    helpsWith: "Leading people, building strong organizations, and making tough calls under pressure.",
+    photo: "/mentors/gavin-adams.jpg",
+    url: "https://www.gavinadams.com",
   },
   {
-    name: "Your name here",
-    title: "Mentor spots open",
-    company: "Your company",
-    helpsWith: "Pricing, costs, and making the numbers work.",
-    placeholder: true,
+    name: "Tim Goodwin",
+    title: "Founder",
+    company: "Goodwin Investment Advisory",
+    helpsWith: "Money, investing, and growing a business that started in a spare bedroom.",
+    url: "https://www.goodwininvestment.com/",
   },
   {
-    name: "Your name here",
-    title: "Mentor spots open",
-    company: "Your company",
-    helpsWith: "Telling your story and pitching with confidence.",
-    placeholder: true,
+    name: "Chantel Adams",
+    title: "Director, New Ground Foundation",
+    company: "Former founder of Forever We",
+    helpsWith: "Starting something from scratch and leading a mission-driven organization.",
   },
 ];
