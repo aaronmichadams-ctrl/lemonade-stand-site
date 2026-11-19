@@ -28,6 +28,7 @@ export const mentors: Mentor[] = [
     title: "Founder",
     company: "Goodwin Investment Advisory",
     helpsWith: "Money, investing, and growing a business that started in a spare bedroom.",
+    photo: "/mentors/tim-goodwin.jpg",
     url: "https://www.goodwininvestment.com/",
   },
   {
@@ -35,5 +36,6 @@ export const mentors: Mentor[] = [
     title: "Director, New Ground Foundation",
     company: "Former founder of Forever We",
     helpsWith: "Starting something from scratch and leading a mission-driven organization.",
+    photo: "/mentors/chantel-adams.jpg",
   },
 ];
